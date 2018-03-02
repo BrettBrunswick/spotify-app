@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule, Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { AppRouterModule } from './router/router.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchComponent } from './search/search.component';
+import { SpotifyService } from './services/spotify.service';
 
 
 @NgModule({
@@ -22,9 +24,13 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     BrowserModule,
-    AppRouterModule
+    AppRouterModule,
+    FormsModule,
+    HttpClientModule,
+    HttpModule
+
   ],
-  providers: [],
+  providers: [SpotifyService, HttpModule, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
