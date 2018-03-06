@@ -24,6 +24,7 @@ constructor(private _spotifyService:SpotifyService) {
 
 
   ngOnInit() {
+
   }
 
 }
