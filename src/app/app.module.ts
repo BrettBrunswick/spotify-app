@@ -12,6 +12,7 @@ import { AppRouterModule } from './router/router.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchComponent } from './search/search.component';
 import { SpotifyService } from './services/spotify.service';
+import { ArtistComponent } from './artist/artist.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SpotifyService } from './services/spotify.service';
     NavBarComponent,
     AboutComponent,
     NotFoundComponent,
-    SearchComponent
+    SearchComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

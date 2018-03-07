@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SpotifyService} from '../services/spotify.service';
 import { Artist } from '../models/artist';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRouterModule } from '../router/router.module';
 
 @Component({
   selector: 'app-search',
@@ -14,6 +16,7 @@ searchStr: string;
 searchRes: Artist[];
 clientSecret : string;
 authURL: string;
+private
 
 constructor(private _spotifyService:SpotifyService) { 
 
@@ -25,6 +28,13 @@ constructor(private _spotifyService:SpotifyService) {
      this.searchRes = res.artists.items;
    })
   }
+
+  getArtist() {
+    this._spotifyService.searchMusic(this.searchStr)
+    .subscribe(res => {
+      this.searchRes = res.artists.items;
+    })
+   }
 
 
   ngOnInit() {
