@@ -6,36 +6,32 @@ import { Album } from '../models/album';
 import { Artist } from '../models/artist';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
-  selector: 'app-artist',
-  templateUrl: './artist.component.html',
-  styleUrls: ['./artist.component.css']
+  selector: 'app-album',
+  templateUrl: './album.component.html',
+  styleUrls: ['./album.component.css']
 })
-
-export class ArtistComponent implements OnInit {
+export class AlbumComponent implements OnInit {
 
   id: string;
-  artist: Artist;
-  albums: Album[];
+  album: Album[];
 
   
   constructor(private _spotifyService:SpotifyService,
   private _route:ActivatedRoute) {
 
 
-
   }
 
   ngOnInit() {
+
     this._route.params.map(params =>params['id']).subscribe((id) => {
-      this._spotifyService.getArtist(id).subscribe(artist => {
-        this.artist = artist;
-      })
-      this._spotifyService.getAlbums(id).subscribe(albums => {
-        this.albums = albums.items;
+      this._spotifyService.getAlbum(id).subscribe(album => {
+        this.album = album;
       })
     })
+
   }
+
 
 }

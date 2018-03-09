@@ -16,7 +16,7 @@ searchStr: string;
 searchRes: Artist[];
 clientSecret : string;
 authURL: string;
-private
+authKey: string;
 
 constructor(private _spotifyService:SpotifyService) { 
 
@@ -38,15 +38,15 @@ constructor(private _spotifyService:SpotifyService) {
 
 
   ngOnInit() {
-    /*this.clientSecret = 
+    this.clientSecret = 
     "Y2M5ZjgzZWM1NGRkNDVlYTg1NGEzZDdhNmRmOGU2ZjY6YjNhY2FkMDc4YjkxNDNlZTkwNzgxMzBlNGJiNDVjZTI=";
     this.authURL = "https://accounts.spotify.com/api/token";
     this._spotifyService.getAuthToken(this.clientSecret, this.authURL)
     .subscribe(res => {
-      console.log("Init");
+      this.authKey = res.access_token;
     })
 
-    */
+    
     
   }
 

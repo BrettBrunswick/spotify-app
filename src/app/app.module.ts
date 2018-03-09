@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchComponent } from './search/search.component';
 import { SpotifyService } from './services/spotify.service';
 import { ArtistComponent } from './artist/artist.component';
+import { AlbumComponent } from './album/album.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ArtistComponent } from './artist/artist.component';
     AboutComponent,
     NotFoundComponent,
     SearchComponent,
-    ArtistComponent
+    ArtistComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
