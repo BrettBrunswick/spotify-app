@@ -14,7 +14,7 @@
                     <h4><a routerLink="/artist/{{res.id}}">{{res.name}}</a></h4>
                     <div>
                         <strong>Genres:</strong>
-                        <span *ngFor="let genre of res.genres">{{genre}}, </span>
+                        <span *ngFor="let genre of res.genres; let i = index;">{{genre}}<span *ngIf='res.genres.length > i+1'>, </span></span>
                     </div>
                 </div>
             </div>
